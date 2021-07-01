@@ -1,11 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
-import { addPoints, displayPoints, payerPoints } from '../routes/pointsRoutes';
+import { addPoints, displayPoints, payerPoints, spendPoints } from './pointsRoutes';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <header>
         <h1>Coding Exercise</h1>
       </header>
       <body>
@@ -19,7 +18,19 @@ function App() {
             Points:
             <input type="text" name="points"/>
           </label>
-          <input type="submit" value="Submit" onClick={addPoints}/>
+          <input type="submit" value="Submit" onClick={addPoints("Ian", 123)}/>
+        </form>
+
+        <form>
+          <label>
+            Name:
+            <input type="text" name="name"/>
+          </label>
+          <label>
+            Points:
+            <input type="text" name="points"/>
+          </label>
+          <input type="submit" value="Submit" onClick={spendPoints("Ian", 123)}/>
         </form>
 
         <h2>Display points</h2>
@@ -31,9 +42,10 @@ function App() {
             Name:
             <input type="text" name="display"/>
           </label>
-          <input type="submit" value="Submit" onClick={payerPoints}/>
+          <input type="submit" value="Submit" onClick={payerPoints("Ian")}/>
         </form>
-        <div id='payerPoints'></div>
+        <div id='Points'></div>
+        <script src="./pointsRoutes.js"></script>
       </body>
     </div>
   );
