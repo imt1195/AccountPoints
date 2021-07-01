@@ -1,5 +1,8 @@
 # AccountPoints
 
+##go to points folder
+    -cd points
+
 ## Install any dependancies
     - npm i
 
